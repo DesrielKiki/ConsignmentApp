@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="subDepositWithProductData"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.SubDepositWithProductData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/background_border_field_grey">
+            <TextView
+                android:id="@+id/tv_productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title12"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@{subDepositWithProductData.productData.productName}"/>
+
+            <TextView
+                android:id="@+id/tv_productQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_below="@id/tv_productName"
+                style="@style/body8"
+                android:parseIntToString="@{subDepositWithProductData.depositProductData.qty}" />
+
+            <EditText
+                android:id="@+id/et_returnQty"
+                style="@style/editTextBold"
+                android:textColorHint="@color/dark_transparant"
+                android:textColor="@color/dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:inputType="number"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:hint="Return" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

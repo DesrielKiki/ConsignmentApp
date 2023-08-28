@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.store.StoreFragment"
+        android:label="@string/menu_store"
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_storeFragment_to_addStoreFragment"
+            app:destination="@id/addStoreFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom" />
+        <action
+            android:id="@+id/action_storeFragment_to_updateStoreFragment"
+            app:destination="@id/updateStoreFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom" />
+        <action
+            android:id="@+id/action_storeFragment_to_detailStoreFragment"
+            app:destination="@id/detailStoreFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/depositFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.deposit.DepositFragment"
+        android:label="@string/menu_deposit"
+        tools:layout="@layout/fragment_deposit" >
+        <action
+            android:id="@+id/action_depositFragment_to_addDepositFragment"
+            app:destination="@id/addDepositFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom" />
+        <action
+            android:id="@+id/action_depositFragment_to_detailDepositFragment"
+            app:destination="@id/detailDepositFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.product.ProductFragment"
+        android:label="@string/menu_product"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom" />
+        <action
+            android:id="@+id/action_productFragment_to_updateProductFragment"
+            app:destination="@id/updateProductFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.category.CategoryFragment"
+        android:label="@string/menu_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_updateCategoryFragment"
+            app:destination="@id/updateCategoryFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStoreFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.store.AddStoreFragment"
+        android:label="@string/add_store"
+        tools:layout="@layout/fragment_add_store" >
+        <action
+            android:id="@+id/action_addStoreFragment_to_storeFragment"
+            app:destination="@id/storeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStoreFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.store.UpdateStoreFragment"
+        android:label="@string/update_store"
+        tools:layout="@layout/fragment_update_store" >
+        <action
+            android:id="@+id/action_updateStoreFragment_to_storeFragment"
+            app:destination="@id/storeFragment" />
+        <argument
+            android:name="storeData"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.StoreData" />
+        <action
+            android:id="@+id/action_updateStoreFragment_to_detailStoreFragment"
+            app:destination="@id/detailStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCategoryFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.category.UpdateCategoryFragment"
+        android:label="Update Category"
+        tools:layout="@layout/fragment_update_category" >
+        <action
+            android:id="@+id/action_updateCategoryFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <argument
+            android:name="currentCategory"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.CategoryData" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailStoreFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.store.DetailStoreFragment"
+        android:label="Store Detail"
+        tools:layout="@layout/fragment_detail_store" >
+        <action
+            android:id="@+id/action_detailStoreFragment_to_storeFragment"
+            app:destination="@id/storeFragment" />
+        <argument
+            android:name="storeData"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.StoreData" />
+        <action
+            android:id="@+id/action_detailStoreFragment_to_updateStoreFragment"
+            app:destination="@id/updateStoreFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.product.AddProductFragment"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProductFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.product.UpdateProductFragment"
+        android:label="Update Product"
+        tools:layout="@layout/fragment_update_product" >
+        <action
+            android:id="@+id/action_updateProductFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <argument
+            android:name="productWithCategoryData"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.relation.ProductWithCategoryData" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDepositFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.deposit.AddDepositFragment"
+        android:label="Add Deposit"
+        tools:layout="@layout/fragment_add_deposit" >
+        <action
+            android:id="@+id/action_addDepositFragment_to_depositFragment"
+            app:destination="@id/depositFragment" />
+        <action
+            android:id="@+id/action_addDepositFragment_to_addDepositProductFragment"
+            app:destination="@id/addDepositProductFragment">
+            <argument
+                android:name="deposit_id"
+                app:argType="long"/>
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailDepositFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.deposit.DetailDepositFragment"
+        android:label="Deposit Detail"
+        tools:layout="@layout/fragment_detail_deposit" >
+        <action
+            android:id="@+id/action_detailDepositFragment_to_depositFragment"
+            app:destination="@id/depositFragment" />
+        <argument
+            android:name="depositWithStoreData"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+        <action
+            android:id="@+id/action_detailDepositFragment_to_finishDepositFragment"
+            app:destination="@id/finishDepositFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDepositProductFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.deposit.AddDepositProductFragment"
+        tools:layout="@layout/fragment_add_deposit_product" >
+        <action
+            android:id="@+id/action_addDepositProductFragment_to_depositFragment"
+            app:destination="@id/depositFragment" />
+        <argument
+            android:name="deposit_id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishDepositFragment"
+        android:name="com.desrielkiki.consignmentapp.ui.deposit.FinishDepositFragment"
+        android:label="Finish Deposit"
+        tools:layout="@layout/fragment_finish_deposit" >
+        <argument
+            android:name="depositWithStoreData"
+            app:argType="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+        <action
+            android:id="@+id/action_finishDepositFragment_to_depositFragment"
+            app:destination="@id/depositFragment" />
+        <action
+            android:id="@+id/action_finishDepositFragment_to_detailDepositFragment"
+            app:destination="@id/detailDepositFragment" />
+    </fragment>
+</navigation>

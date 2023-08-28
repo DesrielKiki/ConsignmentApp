@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="args"
+            type="com.desrielkiki.consignmentapp.ui.store.UpdateStoreFragmentArgs" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/_24sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        tools:context=".ui.store.UpdateStoreFragment">
+
+        <EditText
+            android:id="@+id/et_storeName"
+            style="@style/editTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/background_shape_editext"
+            android:hint="@string/store_name"
+            android:padding="@dimen/_16sdp"
+            android:singleLine="true"
+            android:text="@{args.storeData.storeName}" />
+
+        <EditText
+            android:id="@+id/et_storeAddress"
+            style="@style/editTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@+id/et_storeName"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/background_shape_editext"
+            android:hint="@string/store_location"
+            android:padding="@dimen/_16sdp"
+            android:singleLine="true"
+            android:text="@{args.storeData.storeAddress}" />
+
+        <EditText
+            android:id="@+id/et_storeOwner"
+            style="@style/editTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@+id/et_storeAddress"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/background_shape_editext"
+            android:hint="@string/store_owner"
+            android:padding="@dimen/_16sdp"
+            android:singleLine="true"
+            android:text="@{args.storeData.storeOwner}" />
+
+        <EditText
+            android:id="@+id/et_storeContact"
+            style="@style/editTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@+id/et_storeOwner"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/background_shape_editext"
+            android:hint="Store Contact"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:padding="@dimen/_16sdp"
+            android:singleLine="true"
+            android:text="@{args.storeData.storeContact}" />
+
+    </RelativeLayout>
+</layout>

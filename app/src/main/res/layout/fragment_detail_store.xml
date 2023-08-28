@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="depositWithStoreData"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+        <variable
+            name="args"
+            type="com.desrielkiki.consignmentapp.ui.store.DetailStoreFragmentArgs" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.store.DetailStoreFragment">
+
+        <RelativeLayout
+            android:id="@+id/bg_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/background_border_field_primary_light"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:paddingTop="@dimen/_16sdp"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_storeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{args.storeData.storeName}"
+                style="@style/title14" />
+            <View
+                android:id="@+id/Separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/tv_storeName"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/tv_AddressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Separator"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Store Address"
+                style="@style/title12" />
+
+            <TextView
+                android:id="@+id/tv_storeAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_AddressTitle"
+                android:text="@{args.storeData.storeAddress}"
+                style="@style/body10" />
+
+            <TextView
+                android:id="@+id/tv_ownerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_storeAddress"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Store Owner"
+                style="@style/title12" />
+
+            <TextView
+                android:id="@+id/tv_storeOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_ownerTitle"
+                android:text="@{args.storeData.storeOwner}"
+                style="@style/body10" />
+
+            <TextView
+                android:id="@+id/tv_contactTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_storeOwner"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Store Contact"
+                style="@style/title12" />
+
+            <TextView
+                android:id="@+id/tv_storeContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_contactTitle"
+                android:text="@{args.storeData.storeContact}"
+                style="@style/body10" />
+
+            <TextView
+                android:id="@+id/tv_historyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storeContact"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Deposit History :"
+                style="@style/title12" />
+
+            <TextView
+                android:id="@+id/tv_noHistory"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/tv_historyTitle"
+                android:text="No History Yet"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_4sdp"
+                style="@style/body12"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_depositHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_historyTitle"
+                android:paddingTop="@dimen/_8sdp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

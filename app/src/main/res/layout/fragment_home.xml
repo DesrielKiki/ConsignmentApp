@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/background_border_field_grey"
+        android:padding="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:id="@+id/bg_income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/background_border_field_grey">
+
+            <TextView
+                android:id="@+id/title_totalRevenue"
+                style="@style/title14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Revenue" />
+
+            <TextView
+                android:id="@+id/tv_totalRevenue"
+                style="@style/body10"
+                android:padding="@dimen/_4sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_totalRevenue" />
+            <TextView
+                android:id="@+id/title_revenueThisMonth"
+                style="@style/title14"
+                android:layout_below="@id/tv_totalRevenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revenue This Month" />
+
+            <TextView
+                android:id="@+id/tv_revenueThisMonth"
+                style="@style/body10"
+                android:padding="@dimen/_4sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_revenueThisMonth" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_unfinished"
+            style="@style/title12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bg_income"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="unfinished Deposit :" />
+        <TextView
+            android:id="@+id/tv_noDeposit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_unfinished"
+            android:text="no deposit currently"
+            style="@style/title12"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:visibility="invisible"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_unfinishedDeposit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_unfinished"
+            android:layout_marginTop="@dimen/_8sdp" />
+    </RelativeLayout>
+</RelativeLayout>

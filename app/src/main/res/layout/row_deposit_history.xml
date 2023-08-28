@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="depositWithStoreData"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/background_border_field_grey"
+            android:padding="@dimen/_8sdp">
+            <TextView
+                android:id="@+id/tv_depositDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/body10"
+                android:text="@{depositWithStoreData.depositData.depositDate}"
+                />
+            <TextView
+                android:id="@+id/tv_finishDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_below="@id/tv_depositDate"
+                style="@style/body10"
+                android:text="@{depositWithStoreData.depositData.finishDate}"
+                />
+            <TextView
+                android:id="@+id/tv_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title10"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:visibility="@{depositWithStoreData.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.VISIBLE : View.GONE}"
+                android:text="( FINISHED )"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title10"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:visibility="@{depositWithStoreData.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.GONE : View.VISIBLE}"
+                android:text="( ONGOING )"/>
+            </RelativeLayout>
+    </RelativeLayout>
+</layout>

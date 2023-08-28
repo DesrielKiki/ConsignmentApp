@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="subDepositWithProductData"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.SubDepositWithProductData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/background_border_field_grey">
+
+            <TextView
+                android:id="@+id/tv_productNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_alignParentStart="true"
+                style="@style/title12"
+                android:text="Product Name : "/>
+            <TextView
+                android:id="@+id/tv_productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_productNameTitle"
+                style="@style/title12"
+                android:text="@{subDepositWithProductData.productData.productName}"/>
+
+            <TextView
+                android:id="@+id/tv_productQtyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_below="@id/tv_productName"
+                style="@style/body8"
+                android:text="Deposit quantity : "
+                />
+
+            <TextView
+                android:id="@+id/tv_productQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_below="@id/tv_productName"
+                android:layout_toEndOf="@+id/tv_productQtyTitle"
+                style="@style/body8"
+                android:parseIntToString="@{subDepositWithProductData.depositProductData.qty}"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

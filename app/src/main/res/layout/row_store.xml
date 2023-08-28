@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="depositWithStoreData"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+
+        <variable
+            name="storeData"
+            type="com.desrielkiki.consignmentapp.data.entity.StoreData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:id="@+id/bg_rowStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/background_border_field_grey"
+            android:padding="@dimen/_8sdp"
+            android:sendStoreToDetail="@{storeData}">
+
+            <TextView
+                android:id="@+id/tv_storeName"
+                style="@style/title14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@{storeData.storeName}" />
+
+            <View
+                android:id="@+id/Separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_storeName"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/darker_gray" />
+
+            <ImageView
+                android:id="@+id/iv_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Separator"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:id="@+id/tv_storeOwner"
+                style="@style/body10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Separator"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_toStartOf="@id/iv_shop"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_toEndOf="@id/iv_person"
+                android:text="@{storeData.storeOwner}" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_person"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_storeAddress"
+                style="@style/body10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storeOwner"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_toStartOf="@id/iv_shop"
+                android:layout_toEndOf="@id/iv_location"
+                android:text="@{storeData.storeAddress}" />
+
+            <ImageView
+                android:id="@+id/iv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_location"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/tv_storeContact"
+                style="@style/body10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storeAddress"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_toStartOf="@id/iv_shop"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_toEndOf="@id/iv_phone"
+                android:text="@{storeData.storeContact}" />
+
+
+
+                <ImageView
+                    android:id="@+id/iv_shop"
+                    android:layout_width="@dimen/_84sdp"
+                    android:layout_height="@dimen/_84sdp"
+                    android:layout_below="@+id/Separator"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:src="@drawable/shop" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

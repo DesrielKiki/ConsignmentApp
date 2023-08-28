@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">consignment App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_store">Store</string>
+    <string name="menu_deposit">Deposit</string>
+    <string name="menu_product">Product</string>
+    <string name="menu_category">Category</string>
+    <string name="store_name">Store Name</string>
+    <string name="store_location">Store Location</string>
+    <string name="store_owner">Store Owner</string>
+    <string name="add_store">Add Store</string>
+    <string name="update_store">Update Store</string>
+    <string name="add_category">Add Category</string>
+    <string name="Product_Name">Product Name</string>
+    <string name="Product_Price">Product Price</string>
+    <string name="start_date">Start Date</string>
+    <string name="finish_date">Finish Date</string>
+    <string name="product_category">Product Category</string>
+    <string name="deposit_status">Deposit Status</string>
+    <string name="splash_screen_description">Consignment app Make your sales easier</string>
+</resources>

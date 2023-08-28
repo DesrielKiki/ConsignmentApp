@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_16sdp"
+    tools:context=".ui.deposit.AddDepositProductFragment">
+
+    <Spinner
+        android:id="@+id/sp_product"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:padding="@dimen/_16sdp"
+        android:background="@drawable/spinner_bg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/et_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_60sdp"
+        style="@style/editText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="8"
+        android:layout_below="@id/sp_product"
+        android:background="@drawable/background_shape_editext"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:hint="Deposit Quantity"
+        android:padding="@dimen/_16sdp" />
+
+    <Button
+        android:id="@+id/btn_addProduct"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="@dimen/_135sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_qty"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="Add Product"
+        android:padding="@dimen/_8sdp"
+
+        android:gravity="center_horizontal"
+        android:textColor = "@color/white"
+        android:textAppearance = "@style/title12"
+        app:backgroundTint="@color/colorPrimaryTeks" />
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="@dimen/_135sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_qty"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="Finish Deposit"
+        android:padding="@dimen/_8sdp"
+        android:gravity="center_horizontal"
+        android:textAppearance = "@style/title12"
+        android:textColor = "@color/white"
+        app:backgroundTint="@color/colorPrimaryTeks" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_addedProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_addProduct"
+        android:layout_marginTop="@dimen/_16sdp"/>
+
+</RelativeLayout>

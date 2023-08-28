@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="depositWithStore"
+            type="com.desrielkiki.consignmentapp.data.entity.relation.DepositWithStoreData" />
+        <variable
+            name="depositViewModel"
+            type="com.desrielkiki.consignmentapp.ui.deposit.DepositViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_8sdp"
+        android:navigateToDetailDeposit="@{depositWithStore}"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_field_grey"
+            android:padding="@dimen/_8sdp">
+
+            <ImageView
+                android:id="@+id/iv_store"
+                android:src="@drawable/ic_store"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_storeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_toEndOf="@id/iv_store"
+                style="@style/title14"
+                android:text="@{depositWithStore.storeData.storeName}"/>
+            <TextView
+                android:id="@+id/tv_depositFinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="( Finish )"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                style="@style/title14"
+                android:visibility="@{depositWithStore.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.VISIBLE : View.GONE}"
+                android:layout_toEndOf="@id/tv_storeName"/>
+            <TextView
+                android:id="@+id/tv_ongoing"
+                android:layout_width="wrap_content"
+                style="@style/title14"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:text="( Ongoing )"
+                android:visibility="@{depositWithStore.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Deposit ? View.VISIBLE : View.GONE}"
+                android:layout_toEndOf="@id/tv_storeName"/>
+
+            <View
+                android:id="@+id/Separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@id/tv_storeName"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/tv_depositDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Separator"
+                style="@style/body10"
+                android:text="@{depositWithStore.depositData.depositDate}"
+                />
+            <TextView
+                android:id="@+id/tv_stripe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:visibility="@{depositWithStore.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.VISIBLE : View.GONE}"
+                style="@style/body10"
+                android:layout_below="@id/Separator"
+                android:layout_toEndOf="@+id/tv_depositDate"
+                android:layout_marginStart="@dimen/_4sdp"/>
+            <TextView
+                android:id="@+id/tv_finishDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Separator"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_toEndOf="@id/tv_stripe"
+                style="@style/body10"
+                android:text="@{depositWithStore.depositData.finishDate}"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

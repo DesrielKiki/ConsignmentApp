@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.desrielkiki.consignmentapp.ui.SharedViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.deposit.DepositFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_deposit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_addDeposit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_16sdp" />
+        <ImageView
+            android:id="@+id/iv_noData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_data"
+            android:alpha="0.5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:emptyDatabase="@{viewModel.emptyDataBase}"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+</layout>
