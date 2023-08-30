@@ -19,9 +19,17 @@
             android:background="@drawable/background_border_field_grey"
             android:padding="@dimen/_8sdp">
             <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title10"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@{depositWithStoreData.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? `( Finish )` : `( Ongoing )`}"/>
+            <TextView
                 android:id="@+id/tv_depositDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_status"
                 style="@style/body10"
                 android:text="@{depositWithStoreData.depositData.depositDate}"
                 />
@@ -34,25 +42,7 @@
                 style="@style/body10"
                 android:text="@{depositWithStoreData.depositData.finishDate}"
                 />
-            <TextView
-                android:id="@+id/tv_finish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/title10"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:visibility="@{depositWithStoreData.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.VISIBLE : View.GONE}"
-                android:text="( FINISHED )"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/title10"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:visibility="@{depositWithStoreData.depositData.depositStatus == com.desrielkiki.consignmentapp.data.entity.DepositStatus.Finish ? View.GONE : View.VISIBLE}"
-                android:text="( ONGOING )"/>
+
             </RelativeLayout>
     </RelativeLayout>
 </layout>

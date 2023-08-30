@@ -5,5 +5,5 @@
         android:id="@+id/menu_finishDeposit"
         android:icon="@drawable/ic_done"
         app:showAsAction="ifRoom"
-        android:title="delete store"/>
+        android:title="finish deposit"/>
 </menu>
